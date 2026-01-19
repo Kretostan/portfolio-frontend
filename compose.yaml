@@ -4,4 +4,4 @@ services:
     ports:
       - "8080:80"
     environment:
-      - VITE_API_URL=/api
+      - VITE_API_URL=/api/portfolio
