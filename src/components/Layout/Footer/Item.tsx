@@ -19,7 +19,7 @@ const Item = ({ darkIcon, lightIcon, name, href }: ItemProps) => {
 			href={href}
 			target="_blank"
 			rel="noopener noreferrer"
-			key={resolvedTheme + " " + name}
+			key={`${resolvedTheme} ${name}`}
 		>
 			<Icon Icon={resolvedTheme === "dark" ? darkIcon : lightIcon} size={16} />
 			{name}

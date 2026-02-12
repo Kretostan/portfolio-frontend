@@ -61,6 +61,6 @@ body {
 }
 
 input:-webkit-autofill {
-	-webkit-box-shadow: 0 0 0 100px var(--opposite-foreground-2) inset !important;
-	-webkit-text-fill-color: var(--foreground-1) !important;
+	-webkit-box-shadow: 0 0 0 100px var(--opposite-foreground-2) inset;
+	-webkit-text-fill-color: var(--foreground-1);
 }

@@ -58,7 +58,7 @@ const AboutText = () => {
 					drag={isMobile ? "x" : false}
 					dragConstraints={isMobile ? { left: 0, right: 0 } : undefined}
 					onDragEnd={(_event, info) => changeTextMobileHandler(info)}
-					className="flex flex-col items-center gap-6 px-8 sm:px-10 py-7 mx-6 sm:mx-0 min-h-[33em] md:min-h-[28em] w-full max-w-[350px] md:max-w-[400px] bg-bg-theme-2 rounded-2xl"
+					className="flex flex-col items-center gap-6 px-8 sm:px-10 py-7 mx-6 sm:mx-0 min-h-[33em] md:min-h-[28em] w-full max-w-87.5 md:max-w-100 bg-bg-theme-2 rounded-2xl"
 				>
 					<h3 className="text-accent-theme-1 font-semibold text-2xl">
 						{t(`about.subtitle-${currentText}`)}
@@ -69,7 +69,7 @@ const AboutText = () => {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								className=""
-								key={index + i18n.language}
+								key={`${index} - ${i18n.language}`}
 							>
 								{text}
 							</motion.p>

@@ -8,7 +8,7 @@ const Theme = () => {
 
 	useEffect((): void => {
 		setMounted(true);
-	}, [setMounted]);
+	}, []);
 	if (!mounted) {
 		return null;
 	}

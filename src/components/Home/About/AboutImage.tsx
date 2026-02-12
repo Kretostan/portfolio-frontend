@@ -18,8 +18,8 @@ const AboutImage = () => {
 				},
 			}}
 			src={Image}
-			alt="Kretostan's photo"
-			className="object-cover h-full w-[300px] drop-shadow-[0_0_5px_var(--accent-color-2)]"
+			alt="Kretostan"
+			className="object-cover h-full w-75 drop-shadow-[0_0_5px_var(--accent-color-2)]"
 			loading="lazy"
 		/>
 	);

@@ -39,13 +39,13 @@ const Items = ({ setMenu }: { setMenu?: (open: boolean) => void }) => {
 					}}
 					whileHover={{ color: "var(--accent-color-1)" }}
 					className={`flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`}
-					key={resolvedTheme + " Home"}
+					key={`${resolvedTheme} Home`}
 				>
 					{t("nav.home")}
 				</motion.a>
 			</li>
 			<li className="relative h-full">
-				<motion.a
+				<motion.button
 					href="#about"
 					onClick={(event) => {
 						event.preventDefault();
@@ -54,14 +54,14 @@ const Items = ({ setMenu }: { setMenu?: (open: boolean) => void }) => {
 					}}
 					whileHover={{ color: "var(--accent-color-1)" }}
 					className={`flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`}
-					key={resolvedTheme + " About"}
+					key={`${resolvedTheme} About`}
 				>
 					{t("nav.about")}
-				</motion.a>
+				</motion.button>
 			</li>
 			<li className="relative h-full">
-				<motion.a
-					href="skills"
+				<motion.button
+					href="#skills"
 					onClick={(event) => {
 						event.preventDefault();
 						handleNavigation("#skills");
@@ -69,13 +69,13 @@ const Items = ({ setMenu }: { setMenu?: (open: boolean) => void }) => {
 					}}
 					whileHover={{ color: "var(--accent-color-1)" }}
 					className={`flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`}
-					key={resolvedTheme + " Skills"}
+					key={`${resolvedTheme} Skills`}
 				>
 					{t("nav.skills")}
-				</motion.a>
+				</motion.button>
 			</li>
 			<li className="relative h-full">
-				<motion.a
+				<motion.button
 					href="#projects"
 					onClick={(event) => {
 						event.preventDefault();
@@ -84,10 +84,10 @@ const Items = ({ setMenu }: { setMenu?: (open: boolean) => void }) => {
 					}}
 					whileHover={{ color: "var(--accent-color-1)" }}
 					className={`flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`}
-					key={resolvedTheme + " Projects"}
+					key={`${resolvedTheme} Projects`}
 				>
 					{t("nav.projects")}
-				</motion.a>
+				</motion.button>
 			</li>
 			<li className="relative h-full">
 				<motion.a
@@ -99,7 +99,7 @@ const Items = ({ setMenu }: { setMenu?: (open: boolean) => void }) => {
 					}}
 					whileHover={{ color: "var(--accent-color-1)" }}
 					className={`flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`}
-					key={resolvedTheme + " Contact"}
+					key={`${resolvedTheme} Contact`}
 				>
 					{t("nav.contact")}
 				</motion.a>

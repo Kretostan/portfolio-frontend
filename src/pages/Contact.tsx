@@ -31,12 +31,12 @@ const ContactPage = () => {
 
 	useEffect(() => {
 		if (!data) return;
-		if (data?.success === true) {
+		if (data?.success) {
 			formRef.current?.reset();
 			setIsOpen(true);
 			setInvalid(undefined);
 			setError("");
-		} else if (data?.success === false && data?.isValid) {
+		} else if (!data?.success && data?.isValid) {
 			setInvalid(data.isValid.map((value) => !value));
 			const message =
 				typeof data?.message === "string"
@@ -44,7 +44,7 @@ const ContactPage = () => {
 					: data?.message[language];
 			setError(message);
 		}
-	}, [data, setError, setInvalid, language]);
+	}, [data, language]);
 
 	return (
 		<div className="flex flex-col justify-center items-center gap-14 pt-36 pb-18 min-h-screen bg-bg-theme-1">

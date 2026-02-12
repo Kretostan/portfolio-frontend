@@ -41,8 +41,8 @@ const ProjectsList = ({ data }: ProjectsProps) => {
 								color: "var(--opposite-foreground-1)",
 								backgroundColor: "var(--accent-color-1)",
 							}}
-							className="px-4 py-1 bg-bg-theme-2 text-accent-theme-1 border-1 border-accent-theme-1 rounded-2xl text-sm"
-							key={index + " " + resolvedTheme}
+							className="px-4 py-1 bg-bg-theme-2 text-accent-theme-1 border border-accent-theme-1 rounded-2xl text-sm"
+							key={`${index} ${resolvedTheme}`}
 						>
 							{tech}
 						</motion.p>

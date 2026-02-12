@@ -14,7 +14,7 @@ const SkillsList = ({ skills }: SkillsProps) => {
 	const language = resolved.startsWith("pl") ? "pl" : "en";
 
 	return skills.map((skill, index) => (
-		<AnimatePresence key={index}>
+		<AnimatePresence key={`${index} - ${skill.category.en}`}>
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const loadSkills = async () => {
-	const response = await axios.get(import.meta.env.VITE_API_URL + "/skills");
+	const response = await axios.get(`${import.meta.env.VITE_API_URL}/skills`);
 	if (response.status !== 200) {
 		throw new Error("Failed to load skills");
 	}
@@ -15,7 +15,7 @@ export const skillsLoader = async () => {
 };
 
 const loadProjects = async () => {
-	const response = await axios.get(import.meta.env.VITE_API_URL + "/projects");
+	const response = await axios.get(`${import.meta.env.VITE_API_URL}/projects`);
 	if (response.status !== 200) {
 		throw new Error("Failed to load projects");
 	}
