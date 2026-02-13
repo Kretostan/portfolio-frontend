@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 type ModalType = {
 	children: ReactNode;
 	open: boolean;
-	onClose: () => undefined | null;
+	onClose: () => void | Promise<void>;
 };
 
 const Modal = ({ children, open, onClose }: ModalType) => {
