@@ -121,9 +121,7 @@ const ContactPage = () => {
 			>
 				<img
 					src={
-						data?.success === true
-							? "/icons/check-mark.svg"
-							: "/icons/error-mark.svg"
+						data?.success ? "/icons/check-mark.svg" : "/icons/error-mark.svg"
 					}
 					alt={data?.success ? "Success" : "Fail"}
 					width={38}
