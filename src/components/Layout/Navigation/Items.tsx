@@ -46,7 +46,6 @@ const Items = ({ setMenu }: { setMenu?: (open: boolean) => void }) => {
 			</li>
 			<li className="relative h-full">
 				<motion.button
-					href="#about"
 					onClick={(event) => {
 						event.preventDefault();
 						handleNavigation("#about");
@@ -61,7 +60,6 @@ const Items = ({ setMenu }: { setMenu?: (open: boolean) => void }) => {
 			</li>
 			<li className="relative h-full">
 				<motion.button
-					href="#skills"
 					onClick={(event) => {
 						event.preventDefault();
 						handleNavigation("#skills");
@@ -76,7 +74,6 @@ const Items = ({ setMenu }: { setMenu?: (open: boolean) => void }) => {
 			</li>
 			<li className="relative h-full">
 				<motion.button
-					href="#projects"
 					onClick={(event) => {
 						event.preventDefault();
 						handleNavigation("#projects");
