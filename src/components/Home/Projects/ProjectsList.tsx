@@ -12,6 +12,8 @@ const ProjectsList = ({ data }: ProjectsProps) => {
 	const { resolvedTheme } = useTheme();
 	const language = i18n.language as "pl" | "en";
 
+	if (!data?.projects?.length) return null;
+
 	return data.projects.map((project) => (
 		<motion.div
 			whileHover={{

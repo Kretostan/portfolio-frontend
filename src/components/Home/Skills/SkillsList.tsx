@@ -13,6 +13,9 @@ const SkillsList = ({ skills }: SkillsProps) => {
 	const resolved = i18n.resolvedLanguage?.toLowerCase() ?? "en";
 	const language = resolved.startsWith("pl") ? "pl" : "en";
 
+	console.log(skills);
+	if (!skills) return null;
+
 	return skills.map((skill, index) => (
 		<AnimatePresence key={`${index} - ${skill.category.en}`}>
 			<motion.div
