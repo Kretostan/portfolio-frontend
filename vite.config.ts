@@ -19,6 +19,15 @@ export default defineConfig({
 			outDir: "dist",
 		}),
 	],
+	server: {
+		proxy: {
+			"/api/portfolio/": {
+				target: "http://backend:3001",
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api\/portfolio\/?/, "/"),
+			},
+		},
+	},
 	build: {
 		sourcemap: true,
 		rollupOptions: {
