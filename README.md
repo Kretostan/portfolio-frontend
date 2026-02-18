@@ -1,134 +1,118 @@
-# 🌟 Portfolio
+# Portfolio Frontend
 
-Witaj w repozytorium mojej strony portfolio! Ta strona została stworzona, aby prezentować moje umiejętności, projekty i doświadczenie w sposób profesjonalny i estetyczny. Jeśli szukasz inspiracji lub chcesz zobaczyć, jak mogę pomóc w realizacji Twoich projektów, to jest idealne miejsce!
+Portfolio frontend application. SPA build in React with TypeScript, Vite and Tailwind CSS.
 
-## 📋 Spis treści
+## Requirements
 
-1.  [Opis projektu](#opis-projektu)
-2.  [Technologie](#technologie)
-3.  [Instalacja i uruchomienie](#instalacja-i-uruchomienie)
-4.  [Struktura projektu](#struktura-projektu)
-5.  [Licencja](#licencja)
-6.  [Kontakt](#kontakt)
+- Node.js (v22+)
+- pnpm or npm
+- Docker (optional)
 
----
-
-## Opis projektu
-
-Ta strona portfolio to moje wizytówka w świecie cyfrowym. Zawiera:
-
--   **Informacje o mnie**: Krótki opis mojej osoby, doświadczenia i pasji.
--   **Projekty**: Lista moich najważniejszych projektów z linkami do ich repozytoriów lub wersji online.
--   **Umiejętności**: Prezentacja technologii, narzędzi i języków programowania, którymi się posługuję.
--   **Kontakt**: Formularz kontaktowy lub linki do mediów społecznościowych, aby ułatwić komunikację.
-
-Strona została zaprojektowana z myślą o responsywności, co oznacza, że działa świetnie na urządzeniach mobilnych, tabletach i komputerach.
-
----
-
-## Technologie
-
-Do stworzenia tej strony portfolio wykorzystałem następujące technologie i narzędzia:
-
--   **HTML5**: Struktura strony.
--   **CSS3**: Style i animacje.
--   **JavaScript (ES6+)**: Do implementacji logiki aplikacji.
--   **React.js**: Do budowy komponentów UI.
--   **Next.js**: Do zarządzania routingiem i renderowaniem stron.
--   **Redux**: Do zarządzania stanem globalnym. // Jeszcze nie ma
--   **Axios**: Do komunikacji z zewnętrznymi API. // Jeszcze nie ma
--   **Node.js / Express.js** _(opcjonalnie)_: Backend do obsługi formularzy kontaktowych. // Jeszcze nie ma
--   **Git / GitHub**: Kontrola wersji i hosting kodu źródłowego.
--   **Vercel**: Hosting strony. // Jeszcze nie ma
--   **Figma**: Narzędzie do projektowania interfejsu użytkownika.
-
-Jeśli korzystasz z innych technologii, możesz je dodać do listy.
-
----
-
-## Instalacja i uruchomienie
-
-Aby uruchomić stronę lokalnie, wykonaj następujące kroki:
-
-1. **Sklonuj repozytorium**:
+## Installation
 
 ```bash
-git clone https://github.com/Kretostan/kretostan-portfolio.git
-cd kretostan-portfolio
+pnpm install
 ```
 
-2. **Zainstaluj zależności**:
+## Environment variables
 
-Jeśli korzystasz z npm/yarn:
+
+Create `.env.development` or `.env` (for production) file in root directory:
+
+```
+VITE_API_URL=http://localhost:3001
+```
+
+## Launch
+
+### Development
 
 ```bash
-npm install
+pnpm dev
 ```
+Application will be available at this address http://localhost:5173
 
-lub
+### Production
 
 ```bash
-yarn install
+pnpm build
+pnpm preview
 ```
 
-3. **Uruchom serwer deweloperski**:
+## Docker
+
+Starting with Docker Compose
+
+### Development
+
+Docker image is available in `Dockerfile`. To run frontend in Docker, build the image:
 
 ```bash
-npm start
+docker build -t portfolio-frontend .
+docker run -p 5173:5173 portfolio-frontend
 ```
 
-lub
+### Production
+
+For complete setup with backend, use the compose files in the root directory of the repository.
+
+## Project structure
+
+```
+locales/             # i18n translations (pl.json, en.json)
+├── en.json
+├── pl.json
+public/
+src/
+├── components/      # React components
+│   ├── Contact/     # Contact
+│   ├── Home/        # Home page
+│   ├── Layout/      # Layout
+│   └── UI/          # UI components
+├── pages/           # Application pages
+├── hooks/           # Custom React hooks
+├── assets/          # Resources (images, icons)
+├── styles/          # Global CSS styles
+├── types/           # TypeScript definitions
+├── utils/           # Utility functions       
+├── App.tsx          # Main component
+├── i18n.ts          # i18n configuration
+└── main.tsx         # Entry point
+```
+
+## Tools
+
+- React - UI framework
+- TypeScript - Static typing
+- Vite - Build tool
+- Tailwind CSS - Utility-first CSS framework
+- i18n - Multi-language support (PL, EN)
+
+## Functionalities
+
+- Responsive design (mobile-first)
+- Dark/light theme
+- Multilingualism (PL/EN)
+- Animated background
+- Skills sections
+- Projects list
+- Contact form
+
+## Lint and format
 
 ```bash
-yarn start
+pnpm biome:lint
+pnpm biome:format
 ```
 
-4. **Otwórz przeglądarkę**:
+## Build
 
-Strona powinna być dostępna pod adresem `http://localhost:3000`.
-
-Jak będę miał jakiś backend lub dodatkowe wymagania, opiszę je tutaj. // Jeszcze nie ma
-
----
-
-## Struktura projektu
-
-Poniżej znajduje się opis struktury folderów i plików:
-
-```
-kretostan-portfolio/
-├── public/ # Statyczne zasoby (ikony, obrazy, favicon)
-├── src/ # Kod źródłowy aplikacji
-│ ├── components/ # Reużywalne komponenty
-│ ├── styles/ # Pliki CSS/SCSS
-│ ├── assets/ # Obrazy, fonty, ikony
-│ └── app/ # Główny folder aplikacji
-│   ├── pages/ # Strony (np. about, contact, projects, skills)
-│   ├── favicon.ico # Favicon
-│   ├── layout.tsx # Układ strony
-│   └── page.ts # Strona główna
-├── package.json # Lista zależności i skryptów
-└── README.md # Ten plik
+```bash
+pnpm build
 ```
 
----
+Build will appear in directory `dist/`
 
-## Licencja
+## License
 
-Ten projekt jest dostępny na licencji MIT . Więcej informacji znajdziesz w pliku [LICENSE](LICENSE).
-
----
-
-## Kontakt
-
-Jeśli masz pytania, sugestie lub chcesz omówić współpracę, skontaktuj się ze mną poprzez:
-
--   Email: kubakret82@gmail.com
--   LinkedIn: [linkedin.com/in/jakub-kret-925865263](https://www.linkedin.com/in/jakub-kret-925865263/)
--   GitHub: [github.com/Kretostan](https://github.com/Kretostan)
-
----
-
-## 🙏 Podziękowania
-
-Dziękuję za odwiedzenie mojego repozytorium! Mam nadzieję, że moja strona portfolio Ci się spodobała. Jeśli uważasz, że mogę pomóc w Twoim projekcie, daj mi znać!
+Check [LICENSE](https://github.com/Kretostan/portfolio-frontend/blob/main/LICENSE)
